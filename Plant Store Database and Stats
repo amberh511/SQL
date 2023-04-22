@@ -1,0 +1,28 @@
+--Create a plant store (planthouse) database 
+CREATE TABLE planthouse (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, quantity INTEGER, price REAL, light TEXT);
+
+INSERT INTO Planthouse VALUES(1,"ZZ Plant", 4, 14, 15.98, "low");
+INSERT INTO Planthouse VALUES(2,"Spider Plant", 4, 9, 16.98, "low");
+INSERT INTO Planthouse VALUES(3,"Peace Lily", 5, 10, 22.98, "low");
+INSERT INTO Planthouse VALUES(4,"Parlor Palm", 2, 6, 29.98, "low");
+INSERT INTO Planthouse VALUES(5,"Golden Pothos", 4, 24, 19.98, "low");
+INSERT INTO Planthouse VALUES(6,"Monstera Deliciosa", 5, 7, 28.98, "bright");
+INSERT INTO Planthouse VALUES(7,"Watermelon Peperomia", 3, 13, 14.75, "bright");
+INSERT INTO Planthouse VALUES(8,"Rose Painted Calathea", 3, 11, 15.97, "bright");
+INSERT INTO Planthouse VALUES(9,"Bird Nest Fern", 1, 16, 20.98, "bright");
+INSERT INTO Planthouse VALUES(10,"Mother of Thousands", 1, 5, 7.98, "bright");
+INSERT INTO Planthouse VALUES(11,"Aloe Vera", 1, 16, 5.98, "bright");
+INSERT INTO Planthouse VALUES(12,"Jade Plant", 2, 15, 12.98, "bright");
+INSERT INTO Planthouse VALUES(13,"African Violet", 3, 24, 5.48, "bright");
+INSERT INTO Planthouse VALUES(14,"Fiddleleaf Fig Tree", 2, 4, 35.98, "moderate");
+INSERT INTO Planthouse VALUES(15,"English Ivy", 5, 8, 25.98, "moderate");
+
+--display the database ordered by price low to high
+SELECT * FROM Planthouse ORDER BY price asc;
+
+--How many plants require low light?
+SELECT COUNT(*) AS low_light
+FROM planthouse WHERE light="low";
+
+--What is the average price of a plant?
+SELECT AVG(price) "avg price" FROM planthouse
